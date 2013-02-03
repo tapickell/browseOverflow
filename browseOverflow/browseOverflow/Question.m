@@ -10,9 +10,8 @@
 
 @implementation Question
 
-- (NSDate *) date
-{
-    return [NSDate date];
-}
+@synthesize title;
+@synthesize score;
+@synthesize date;
 
 @end

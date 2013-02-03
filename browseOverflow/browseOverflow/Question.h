@@ -10,6 +10,10 @@
 
 @interface Question : NSObject
 
+@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) NSInteger score;
+
 - (NSDate *) date;
 
 @end

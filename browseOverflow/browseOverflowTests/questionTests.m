@@ -14,13 +14,31 @@
 - (void) setUp
 {
     question = [[Question alloc]init];
-    testDate = [[NSDate alloc] init];
-    question.date = testDate;
+    question.date = [NSDate distantPast];
+    question.title = @"Do iPhones also dream of electric sheep?";
+    question.score = 42;
 }
 
 - (void) testQuestionHasADate
 {
-    STAssertTrue([question.date isKindOfClass: [NSDate class]], @"Question needs to privide its date");
+    NSDate *testDate = [NSDate distantPast];
+    question.date = testDate;
+    STAssertEqualObjects(question.date, testDate, @"Question needs to provide its date");
+}
+
+- (void) testQuestionsKeepScore
+{
+    STAssertEquals(question.score, 42, @"Questions need a numeric score");
+}
+
+- (void) testQuestionHasATitle
+{
+    STAssertEqualObjects(question.title, @"Do iPhones also dream of electric sheep?", @"Question should know its title");
+}
+
+- (void) tearDown
+{
+    question = nil;
 }
 
 @end

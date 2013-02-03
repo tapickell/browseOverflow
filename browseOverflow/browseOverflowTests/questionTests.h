@@ -10,7 +10,6 @@
 
 @interface questionTests : SenTestCase {
     Question *question;
-    NSDate *testDate;
 }
 
 @end
