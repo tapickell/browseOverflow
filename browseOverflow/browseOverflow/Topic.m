@@ -8,7 +8,9 @@
 
 #import "Topic.h"
 
-@implementation Topic
+@implementation Topic {
+    NSArray *questions;
+}
 
 @synthesize name;
 @synthesize tag;
@@ -18,13 +20,19 @@
     if ((self = [super init])) {
         name = [newName copy];
         tag = [newTag copy];
+        questions = [[NSArray alloc] init];
     }
     return self;
 }
 
 - (NSArray *) recentQuestions
 {
-    return [NSArray array];
+    return questions;
+}
+
+- (void) addQuestion:(Question *)questionToAdd
+{
+    questions = [questions arrayByAddingObject:questionToAdd];
 }
 
 @end
