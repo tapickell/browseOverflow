@@ -51,6 +51,29 @@
     STAssertEquals([[topic recentQuestions] count], (NSUInteger)1, @"Add a question and the count of questions should go up");
 }
 
+- (void) testQuestionsAreListedChronologically
+{
+    //create two questions with different dates past and future
+    Question *q1 = [[Question alloc] init];
+    q1.date = [NSDate distantPast];
+    
+    Question *q2 = [[Question alloc] init];
+    q2.date = [NSDate distantFuture];
+    
+    //add both questions to the topic 
+    [topic addQuestion:q1];
+    [topic addQuestion:q2];
+    
+    //create new array fron current questions array belonging to topic
+    NSArray *questions = [topic recentQuestions];
+    //get the first question and the second question from array
+    Question *listedFirst = [questions objectAtIndex:0];
+    Question *listedSecond = [questions objectAtIndex:1];
+    
+    //test that the future question is first in the list (laterDate should be true and return the listedFirst.date)
+    STAssertEqualObjects([listedFirst.date laterDate:listedSecond.date], listedFirst.date, @"The later question ahould appear first in the list");
+}
+
 - (void) tearDown
 {
     topic = nil;

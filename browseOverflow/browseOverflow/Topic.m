@@ -7,6 +7,7 @@
 //
 
 #import "Topic.h"
+#import "Question.h"
 
 @implementation Topic {
     NSArray *questions;
@@ -27,7 +28,11 @@
 
 - (NSArray *) recentQuestions
 {
-    return questions;
+    return [questions sortedArrayUsingComparator: ^(id obj1, id obj2) {
+        Question *q1 = (Question *)obj1;
+        Question *q2 = (Question *)obj2;
+        return [q2.date compare: q1.date];
+    }];
 }
 
 - (void) addQuestion:(Question *)questionToAdd
