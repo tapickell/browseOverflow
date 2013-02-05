@@ -13,8 +13,10 @@
 @interface Answer : NSObject
 
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic, copy) Person *person;
+@property (nonatomic) Person *person;
 @property (nonatomic) NSInteger score;
 @property (nonatomic) BOOL accepted;
+
+- (NSComparisonResult) compare:(Answer *) otherAnswer;
 
 @end

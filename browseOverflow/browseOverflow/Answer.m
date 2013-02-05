@@ -15,4 +15,20 @@
 @synthesize score;
 @synthesize accepted;
 
+- (NSComparisonResult) compare:(Answer *) otherAnswer
+{
+    if (accepted && !(otherAnswer.accepted)) {
+        return NSOrderedAscending;
+    } else if (!accepted && otherAnswer.accepted) {
+        return NSOrderedDescending;
+    }
+    if (score > otherAnswer.score) {
+        return NSOrderedAscending;
+    } else if (score < otherAnswer.score) {
+        return NSOrderedDescending;
+    } else {
+        return NSOrderedSame;
+    }
+}
+
 @end
