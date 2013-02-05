@@ -74,6 +74,15 @@
     STAssertEqualObjects([listedFirst.date laterDate:listedSecond.date], listedFirst.date, @"The later question ahould appear first in the list");
 }
 
+- (void) testLimitOfTwentyQuestions
+{
+    Question *q1 = [[Question alloc] init];
+    for (NSInteger i = 0; i < 25; i++) {
+        [topic addQuestion:q1];
+    }
+    STAssertTrue([[topic recentQuestions] count] < 21, @"There should be no more than twenty questions");
+}
+
 - (void) tearDown
 {
     topic = nil;

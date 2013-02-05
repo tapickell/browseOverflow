@@ -19,6 +19,8 @@
 
 - (NSArray *) recentQuestions;
 
+- (NSArray *) sortQuestionsLatestFirst: (NSArray *)questionList;
+
 - (void) addQuestion: (Question *) questionToAdd;
 
 @end

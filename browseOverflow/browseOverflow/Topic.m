@@ -28,7 +28,12 @@
 
 - (NSArray *) recentQuestions
 {
-    return [questions sortedArrayUsingComparator: ^(id obj1, id obj2) {
+    return [self sortQuestionsLatestFirst:questions];
+}
+
+- (NSArray *) sortQuestionsLatestFirst: (NSArray *)questionList
+{
+    return [questionList sortedArrayUsingComparator: ^(id obj1, id obj2) {
         Question *q1 = (Question *)obj1;
         Question *q2 = (Question *)obj2;
         return [q2.date compare: q1.date];
@@ -37,7 +42,10 @@
 
 - (void) addQuestion:(Question *)questionToAdd
 {
-    questions = [questions arrayByAddingObject:questionToAdd];
+    NSArray *newQuestions = [questions arrayByAddingObject:questionToAdd];
+    if ([new]) {
+        <#statements#>
+    }
 }
 
 @end
