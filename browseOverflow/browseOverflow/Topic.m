@@ -43,9 +43,11 @@
 - (void) addQuestion:(Question *)questionToAdd
 {
     NSArray *newQuestions = [questions arrayByAddingObject:questionToAdd];
-    if ([new]) {
-        <#statements#>
+    if ([newQuestions count] > 20) {
+        newQuestions = [self sortQuestionsLatestFirst:newQuestions];
+        newQuestions = [newQuestions subarrayWithRange:NSMakeRange(0, 20)];
     }
+    questions = newQuestions;
 }
 
 @end
