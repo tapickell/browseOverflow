@@ -8,8 +8,12 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+@class Answer;
+
 @interface questionTests : SenTestCase {
     Question *question;
+    Answer *lowScore;
+    Answer *highScore;
 }
 
 @end

@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) Person *person;
 @property (nonatomic) NSInteger score;
-@property (nonatomic) BOOL accepted;
+@property (getter=isAccepted) BOOL accepted;
 
 - (NSComparisonResult) compare:(Answer *) otherAnswer;
 
