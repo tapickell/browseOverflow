@@ -7,6 +7,9 @@
 //
 
 #import "QuestionCreationTests.h"
+#import "StackOverflowManager.h"
+#import "MockStackOverflowManagerDelegate.h"
+
 
 @implementation QuestionCreationTests {
 
@@ -27,6 +30,20 @@
 {
     id <StackOverflowManagerDelegate> delegate = [[MockStackOverflowManagerDelegate alloc] init];
     STAssertNoThrow(mgr.delegate = delegate, @"Object conforming to the delagate protocol should be used as the delegate");
+}
+
+- (void) testManagerAcceptsNilAsADelegate
+{
+    STAssertNoThrow(mgr.delegate = nil, @"It shouuld be acceptable to use nil as an object's delegate");
+}
+
+- (void) testASkingForQuestionsMeansRequestingData
+{
+    MockStackOverflowManagerDelegate *communicator = [[MockStackOverflowCommunicator alloc] init];
+    mgr.communicator = communicator;
+    Topic *topic = [[Topic alloc] intiWithName: @"iPhone" tag: @"iphone"];
+    [mgr fetchQuestionsOnTopic: topic];
+    STAssertTrue([communicator wasAskedToFetchQuestions], @"The communicator should need to fetch data");
 }
 
 - (void) tearDown
