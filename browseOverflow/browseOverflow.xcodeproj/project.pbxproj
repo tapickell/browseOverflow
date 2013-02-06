@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2611053116C1D1E0007E4CBF /* QuestionCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611053016C1D1E0007E4CBF /* QuestionCreationTests.m */; };
 		262D54FB16BE1E9000468B2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262D54FA16BE1E9000468B2A /* UIKit.framework */; };
 		262D54FD16BE1E9000468B2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262D54FC16BE1E9000468B2A /* Foundation.framework */; };
 		262D54FF16BE1E9000468B2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262D54FE16BE1E9000468B2A /* CoreGraphics.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2611052F16C1D1E0007E4CBF /* QuestionCreationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionCreationTests.h; path = ../QuestionCreationTests.h; sourceTree = "<group>"; };
+		2611053016C1D1E0007E4CBF /* QuestionCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionCreationTests.m; path = ../QuestionCreationTests.m; sourceTree = "<group>"; };
 		262D54F616BE1E9000468B2A /* browseOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = browseOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		262D54FA16BE1E9000468B2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		262D54FC16BE1E9000468B2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +184,8 @@
 		262D552716BE1E9100468B2A /* browseOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
+				2611052F16C1D1E0007E4CBF /* QuestionCreationTests.h */,
+				2611053016C1D1E0007E4CBF /* QuestionCreationTests.m */,
 				26EC50F816C0BAA300AA9A0E /* answerTests.h */,
 				26EC50F916C0BAA300AA9A0E /* answerTests.m */,
 				262D552D16BE1E9100468B2A /* browseOverflowTests.h */,
@@ -336,6 +341,7 @@
 				262D554616BF5A2E00468B2A /* personTests.m in Sources */,
 				26EC50FA16C0BAA300AA9A0E /* answerTests.m in Sources */,
 				26EC50FE16C0BD3A00AA9A0E /* Answer.m in Sources */,
+				2611053116C1D1E0007E4CBF /* QuestionCreationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

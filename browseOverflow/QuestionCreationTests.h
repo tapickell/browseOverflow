@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface StackOverflowManagerTests : SenTestCase
+@interface QuestionCreationTests : SenTestCase
 
 @end
