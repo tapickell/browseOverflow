@@ -45,4 +45,7 @@
     self.fetchError = error;
 }
 
+- (BOOL) wasAskedToFetchQuestions {
+    return true;
+}
 @end

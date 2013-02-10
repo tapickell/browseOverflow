@@ -17,4 +17,6 @@
 @property (strong) Question *successQuestion;
 @property (strong) Question *bodyQuestion;
 
+- (BOOL) wasAskedToFetchQuestions;
+
 @end
