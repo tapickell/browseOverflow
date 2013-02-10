@@ -10,4 +10,8 @@
 
 @implementation StackOverflowCommunicator
 
+- (void) searchForQuestionsWithTag: (NSString *)tag {
+    
+}
+
 @end

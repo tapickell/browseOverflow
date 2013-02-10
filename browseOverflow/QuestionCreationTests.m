@@ -41,7 +41,7 @@
 
 - (void) testAskingForQuestionsMeansRequestingData
 {
-    MockStackOverflowManagerDelegate *communicator = [[MockStackOverflowCommunicator alloc] init];
+    MockStackOverflowCommunicator *communicator = [[MockStackOverflowCommunicator alloc] init];
     mgr.communicator = communicator;
     Topic *topic = [[Topic alloc] initWithName: @"iPhone" tag: @"iphone"];
     [mgr fetchQuestionsOnTopic: topic];
