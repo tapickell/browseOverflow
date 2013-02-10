@@ -41,4 +41,8 @@
     self.bodyQuestion = question;
 }
 
+- (void) fetchingQuestionsOnTopic: (Topic *)topic failedWithError: (NSError *)error {
+    self.fetchError = error;
+}
+
 @end

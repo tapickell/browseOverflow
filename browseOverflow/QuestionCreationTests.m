@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Todd Pickell. All rights reserved.
 //
 
+#import "Topic.h"
 #import "QuestionCreationTests.h"
 #import "StackOverflowManager.h"
 #import "MockStackOverflowManagerDelegate.h"
+#import "MockStackOverflowCommunicator.h"
 
 
 @implementation QuestionCreationTests {
@@ -37,11 +39,11 @@
     STAssertNoThrow(mgr.delegate = nil, @"It shouuld be acceptable to use nil as an object's delegate");
 }
 
-- (void) testASkingForQuestionsMeansRequestingData
+- (void) testAskingForQuestionsMeansRequestingData
 {
     MockStackOverflowManagerDelegate *communicator = [[MockStackOverflowCommunicator alloc] init];
     mgr.communicator = communicator;
-    Topic *topic = [[Topic alloc] intiWithName: @"iPhone" tag: @"iphone"];
+    Topic *topic = [[Topic alloc] initWithName: @"iPhone" tag: @"iphone"];
     [mgr fetchQuestionsOnTopic: topic];
     STAssertTrue([communicator wasAskedToFetchQuestions], @"The communicator should need to fetch data");
 }

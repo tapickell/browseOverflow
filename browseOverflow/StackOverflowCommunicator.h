@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StackOverflowCommunicator : NSObject
+@interface StackOverflowCommunicator : NSObject {
+    
+}
+
+- (void) searchForQuestionsWithTag: (NSString *)tag;
 
 @end
